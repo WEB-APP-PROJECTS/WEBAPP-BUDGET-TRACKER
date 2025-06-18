@@ -1,0 +1,148 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap');
+
+:root {
+  --primary-bg: #1f293a;
+  --highlight-color: #0ef;
+  --input-radius: 40px;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
+
+body {
+  background: var(--primary-bg);
+  color: white;
+  padding: 20px;
+}
+
+h2 {
+  font-size: 2em;
+  color: var(--highlight-color);
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.budget-container {
+  max-width: 900px;
+  margin: 0 auto;
+  background: #263245;
+  padding: 30px;
+  border-radius: 20px;
+}
+
+.form-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  margin-bottom: 20px;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.input-box {
+  flex: 1;
+  min-width: 200px;
+  position: relative;
+}
+
+.input-box input,
+.input-box select {
+  width: 100%;
+  height: 45px;
+  background: transparent;
+  border: 2px solid #2c4766;
+  border-radius: var(--input-radius);
+  padding: 0 20px;
+  color: white;
+  font-size: 1em;
+}
+
+.btn-row {
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+  margin: 30px 0;
+}
+
+.btn {
+  background: var(--highlight-color);
+  border: none;
+  padding: 12px 30px;
+  color: var(--primary-bg);
+  border-radius: var(--input-radius);
+  cursor: pointer;
+  font-weight: 600;
+  transition: 0.3s;
+}
+
+.btn:hover {
+  opacity: 0.9;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 40px;
+  text-align: left;
+}
+
+th, td {
+  padding: 12px 15px;
+  border: 1px solid #444;
+}
+
+th {
+  background: #b0b0b0;
+  color: black;
+}
+
+td {
+  background: #2a3b4d;
+}
+
+.action-icons {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+
+.action-icons a {
+  color: var(--highlight-color);
+  text-decoration: none;
+}
+
+.icon-delete {
+  color: red;
+  cursor: pointer;
+}
+
+.nav-bar {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  background: #1f293a;
+  display: flex;
+  justify-content: space-around;
+  padding: 10px 0;
+  border-top: 2px solid #333;
+}
+
+.nav-bar i {
+  font-size: 24px;
+  color: var(--highlight-color);
+}
+
+@media (max-width: 768px) {
+  .form-row {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .btn-row {
+    flex-direction: column;
+  }
+}
