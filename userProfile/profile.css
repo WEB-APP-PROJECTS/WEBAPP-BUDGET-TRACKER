@@ -15,9 +15,10 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    min-height: 100vh;
-    background: var(--primary-bg);}
-
+    min-height:calc(100vh - 70px);
+    background: var(--primary-bg);
+    padding-bottom: 70px;
+}
 h2 {
     font-size: 2em;
     color: var(--highlight-color);
@@ -26,6 +27,7 @@ h2 {
 
 
 .profile-container {
+   margin-bottom: 20px;
     width: 400px;
     max-width: 95%;
     background: #1f293a;
@@ -35,6 +37,7 @@ h2 {
     display: flex;
     flex-direction: column;
     transition: background 0.3s, color 0.3s;
+  
 }
 
 .profile-header {
@@ -86,54 +89,6 @@ h2 {
 .logout {
     color: red;
 }
-
-.bottom-nav {
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-    height: 50px;
-    border-top: 1px solid #1f293a;
-    background: #1f293a;
-    position: sticky;
-    bottom: 0;
-}
-
-.bottom-nav i {
-    font-size: 1.5em;
-    color: #333;
-    cursor: pointer;
-    transition: color 0.3s;
-}
-
-.bottom-nav i:hover {
-    color: var(--highlight-color);
-}
-
-.bottom-nav i.active {
-    color: var(--highlight-color);
-}
-
-.theme-toggle {
-    text-align: center;
-    margin: 10px 0;
-}
-
-.theme-toggle button {
-    background: var(--highlight-color);
-    border: none;
-    color: var(--primary-bg);
-    padding: 8px 16px;
-    border-radius: 20px;
-    cursor: pointer;
-    font-size: 0.9em;
-    font-weight: 600;
-    transition: background 0.3s, color 0.3s;
-}
-
-.theme-toggle button:hover {
-    opacity: 0.9;
-}
-
 @media (max-width: 600px) {
     .profile-header i {
         font-size: 40px;
@@ -152,8 +107,117 @@ h2 {
         font-size: 1.2em;
         margin-right: 10px;
     }
+   
+}
 
-    .bottom-nav i {
-        font-size: 1.3em;
+
+.profile-section {
+    border: 1px solid var(--border-color);
+    padding: 25px;
+    border-radius: 8px;
+    margin-bottom: 25px;
+    background: rgba(0, 0, 0, 0.1);
+}
+
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 500;
+    color: var(--highlight-color);
+}
+
+input[type="text"],
+input[type="email"],
+input[type="password"] {
+    width: 100%;
+    padding: 12px 20px;
+    background: var(--input-bg);
+    border: 1px solid var(--border-color);
+    border-radius: var(--input-radius);
+    color: var(--text-color);
+    font-size: 1em;
+    transition: all 0.3s;
+}
+
+input[type="text"]:focus,
+input[type="email"]:focus,
+input[type="password"]:focus {
+    outline: none;
+    border-color: var(--highlight-color);
+    box-shadow: 0 0 10px rgba(0, 238, 255, 0.3);
+}
+
+button {
+    background: var(--highlight-color);
+    color: var(--primary-bg);
+    padding: 12px 25px;
+    border: none;
+    border-radius: var(--input-radius);
+    cursor: pointer;
+    margin-right: 15px;
+    font-weight: 600;
+    font-size: 1em;
+    transition: all 0.3s;
+}
+
+button:hover {
+    background: #00d9f2;
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(0, 238, 255, 0.3);
+}
+
+.view-mode p {
+    margin: 15px 0;
+    font-size: 1.1em;
+    line-height: 1.6;
+}
+
+.view-mode p strong {
+    color: var(--highlight-color);
+    margin-right: 10px;
+}
+
+.hidden {
+    display: none;
+}
+
+/* Animation for mode switching */
+.view-mode, .edit-mode {
+    transition: opacity 0.3s ease;
+}
+
+/* Responsive adjustments */
+@media (max-width: 600px) {
+    .profile-container {
+        padding: 20px;
+    }
+    
+    .profile-section {
+        padding: 20px;
+    }
+    
+    h2 {
+        font-size: 1.5em;
+    }
+    
+    button {
+        padding: 10px 20px;
+        margin-right: 10px;
+        margin-bottom: 10px;
+    }
+    
+    input[type="text"],
+    input[type="email"],
+    input[type="password"] {
+        padding: 10px 15px;
     }
 }
+
+
+
+
