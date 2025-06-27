@@ -5,6 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>User Settings</title>
     <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+
     <style>
         :root {
             --primary-bg: #1f293a;
@@ -130,6 +132,31 @@
             from { opacity: 0; transform: translateY(10px); }
             to { opacity: 1; transform: translateY(0); }
         }
+
+        .nav-bar {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background-color: #0d1b2a; /* dark background to match your page */
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding: 12px 0;
+    box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.4);
+    z-index: 1000;
+}
+
+.nav-bar a {
+    color: #0ef;
+    text-decoration: none;
+    font-size: 24px;
+    transition: color 0.3s;
+}
+
+.nav-bar a:hover {
+    color: #ffffff;
+}
     </style>
 </head>
 <body>
@@ -224,5 +251,20 @@
             alert('Your settings have been saved');
         }
     </script>
+
+            <footer class="nav-bar">
+  <a href="home.html" title="Home">
+    <i class="fas fa-home"></i>
+  </a>
+  <a href="add_transaction.html" title="Add Transaction">
+    <i class="fas fa-plus-circle"></i>
+  </a>
+  <a href="view_transactions.html" title="View Transactions">
+    <i class="fas fa-receipt"></i>
+  </a>
+  <a href="profile.html" title="User Profile">
+    <i class="fas fa-user-circle"></i>
+  </a>
+</footer>
 </body>
 </html>
