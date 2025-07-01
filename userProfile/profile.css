@@ -28,8 +28,8 @@ h2 {
 
 .profile-container {
    margin-bottom: 20px;
-    width: 400px;
-    max-width: 95%;
+    width: 600px;
+    max-width: 100%;
     background: #1f293a;
     border-radius: 10px;
     overflow: hidden;
@@ -112,10 +112,13 @@ h2 {
 
 
 .profile-section {
+    align-items: center;
+    height: 400px;
+    width: 600px;
     border: 1px solid var(--border-color);
     padding: 25px;
     border-radius: 8px;
-    margin-bottom: 25px;
+    margin-bottom: 10%;
     background: rgba(0, 0, 0, 0.1);
 }
 
@@ -159,7 +162,8 @@ button {
     border: none;
     border-radius: var(--input-radius);
     cursor: pointer;
-    margin-right: 15px;
+    margin-left: 20%;
+    margin-top: 10%;
     font-weight: 600;
     font-size: 1em;
     transition: all 0.3s;
@@ -174,12 +178,14 @@ button:hover {
 .view-mode p {
     margin: 15px 0;
     font-size: 1.1em;
-    line-height: 1.6;
+    line-height: 3.0;
+    margin-top: 30px;
 }
 
 .view-mode p strong {
     color: var(--highlight-color);
-    margin-right: 10px;
+    margin-left: 40px;
+    margin-bottom: 30px;
 }
 
 .hidden {
@@ -223,7 +229,7 @@ button:hover {
     bottom: 0;
     left: 0;
     width: 100%;
-    background-color: #0d1b2a; /* dark background to match your page */
+    background-color: #0d1b2a; 
     display: flex;
     justify-content: space-around;
     align-items: center;
