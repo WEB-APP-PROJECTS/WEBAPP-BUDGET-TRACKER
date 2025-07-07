@@ -6,37 +6,46 @@
   <title>Budget Tracker | Home</title>
   <link rel="stylesheet" href="homepage.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 </head>
 <body>
 
   <div class="header">
     <div class="left">Hello, Username!</div>
     <div class="right">
-      <button>Home</button>
-      <button>View Budget</button>
-      <button>Logout</button>
+      <a href = "budgets.html">
+      <button class = "btn">View Budget</button>
+      </a>
+      <a href = "login.html">
+      <button class = "btn">Logout</button>
+      </a>
     </div>
   </div>
 
   <h2>Welcome to Budget Tracker</h2>
 
-  <div class="circle-container">
-  <div class="circle" id="budget">
-    <p class="circle-title">Budget</p>
-    <p class="circle-value">₵0.00</p>
+  <div class="circle-layout">
+    <div class="circle" id="budget-circle">
+  <h3>Budget</h3>
+  <canvas id="budgetChart"></canvas>
+</div>
+
+
+  <div class="circle" id="expenses-circle">
+    <h3>Expenses</h3>
+    <canvas id="expensesChart"></canvas>
   </div>
-  <div class="circle" id="expenses">
-    <p class="circle-title">Expenses</p>
-    <p class="circle-value">₵0.00</p>
-  </div>
-  <div class="circle" id="balance">
-    <p class="circle-title">Balance</p>
-    <p class="circle-value">₵0.00</p>
+
+  <div class="circle" id="balance-circle">
+    <h3>Balance</h3>
+    <canvas id="balanceChart"></canvas>
   </div>
   </div>
 
   <div class="create-budget-btn">
+    <a href = "budgets.html">
     <button class="btn">Create Budget</button>
+    </a>
   </div>
 
   <footer class="nav-bar">
@@ -52,7 +61,56 @@
   <a href="profile.html" title="User Profile">
     <i class="fas fa-user-circle"></i>
   </a>
-</footer>
+ </footer>
+
+<script>
+  const budgetData = {
+    labels: ['Food', 'Transport', 'Entertainment', 'Groceries', 'Utilities'],
+    datasets: [{
+      label: 'Budget',
+      data: [2000, 1500, 1000, 1800, 1200], // Replace with PHP echo from DB
+      backgroundColor: ['#9534db', '#ff6384', '#f3ea46', '#ffcd56', '#4bc0c0']
+    }]
+  };
+
+  const expensesData = {
+    labels: ['Food', 'Transport', 'Entertainment', 'Groceries', 'Utilities'],
+    datasets: [{
+      label: 'Expenses',
+      data: [1000, 1200, 500, 1300, 800], // Replace with PHP echo
+      backgroundColor: ['#9534db', '#ff6384', '#f3ea46', '#ffcd56', '#4bc0c0']
+    }]
+  };
+
+  const balanceData = {
+    labels: ['Food', 'Transport', 'Entertainment', 'Groceries', 'Utilities'],
+    datasets: [{
+      label: 'Balance',
+      data: [1000, 300, 500, 500, 400], // Replace with PHP (budget - expenses)
+      backgroundColor: ['#9534db', '#ff6384', '#f3ea46', '#ffcd56', '#4bc0c0']
+    }]
+  };
+
+  const config = (data) => ({
+    type: 'pie',
+    data: data,
+    options: {
+      responsive: true,
+      plugins: {
+        legend: {
+          position: 'bottom',
+          labels: {
+            color: '#fff'
+          }
+        }
+      }
+    }
+  });
+
+  new Chart(document.getElementById('budgetChart'), config(budgetData));
+  new Chart(document.getElementById('expensesChart'), config(expensesData));
+  new Chart(document.getElementById('balanceChart'), config(balanceData));
+</script>
 
 
 </body>
