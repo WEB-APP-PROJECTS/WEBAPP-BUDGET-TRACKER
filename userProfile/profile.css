@@ -192,12 +192,12 @@ button:hover {
     display: none;
 }
 
-/* Animation for mode switching */
+
 .view-mode, .edit-mode {
     transition: opacity 0.3s ease;
 }
 
-/* Responsive adjustments */
+
 @media (max-width: 600px) {
     .profile-container {
         padding: 20px;
